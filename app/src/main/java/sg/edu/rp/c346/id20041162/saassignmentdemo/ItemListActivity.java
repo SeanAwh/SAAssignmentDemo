@@ -32,7 +32,45 @@ public class ItemListActivity extends AppCompatActivity {
         dp = findViewById(R.id.datePicker);
         spinnerFilter = findViewById(R.id.spinnerFilter);
 
+        //List view adapter, warrantyList array
+
+
+
+        //making list view long click
+
+
+
+
+        //Show inputs
+
+
+        //Add input to object and array
+
+
+
+        //Get position when on Long click.
+
+
+        //Update input.
+
+
+
+        //Cancel button to hide interface.
+
+
     }
+
+    //List view long click options
+
+
+
+    //List view long click function
+
+
+    //Spinner function
+
+
+
 
     //Show input method
     public void showInput(){
