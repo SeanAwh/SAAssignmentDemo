@@ -4,19 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-public class ItemListActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Calendar;
+
+public class ItemListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText name;
     Button btnAdd, btnShow, btnUpdate, btnCancel;
     ListView lvItem;
     DatePicker dp;
     Spinner spinnerFilter;
+
+    int indexPos = 0;
+    boolean editing = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,11 @@ public class ItemListActivity extends AppCompatActivity {
         lvItem = findViewById(R.id.lvItem);
         dp = findViewById(R.id.datePicker);
         spinnerFilter = findViewById(R.id.spinnerFilter);
+
+        ArrayAdapter<CharSequence> adapterFilter = ArrayAdapter.createFromResource(this, R.array.numbers, android.R.layout.simple_spinner_item);
+        adapterFilter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFilter.setAdapter(adapterFilter);
+        spinnerFilter.setOnItemSelectedListener(this);
 
         //List view adapter, warrantyList array
 
@@ -68,7 +83,19 @@ public class ItemListActivity extends AppCompatActivity {
 
 
     //Spinner function
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        //Filter off
 
+        //Filter on
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 
 
 
